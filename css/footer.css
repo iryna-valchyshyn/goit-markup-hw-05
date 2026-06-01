@@ -127,7 +127,7 @@
         font-size: 16px;
     
         /* line-height: 24px; */
-        line-height: 2;
+        line-height: 1.5;
         letter-spacing: 0.02em;
         color: var(--white);
         margin-bottom: 16px;
@@ -166,9 +166,17 @@
         font-size: 12px;
     
         /* line-height: 14px; */
-        line-height: 1.16667;
+        line-height: 2;
         letter-spacing: 0.04em;
         color: var(--white);
+            transition-property: border;
+                transition-duration: 250ms ease;
+
+}
+
+.input-footer:hover,
+.input-footer:focus {
+    border: 1px solid var(--green);
 
 }
 
@@ -197,9 +205,9 @@
         width: 165px;
         height: 40px;
         max-width: 165px;
-        background: var(--iris);
+        background-color: var(--iris);
         transition-property: background-color;
-        transition-duration: 250ms;
+        transition-duration: 250ms ease;
         font-family: var(--font-family);
             font-weight: 500;
             font-size: 16px;
@@ -215,15 +223,9 @@
     fill: var(--white);
 }
 
-.input-footer:hover,
-.input-footer:focus {
-        border: 1px solid var(--green);
-        transition-property: background-color;
-            transition-duration: 250ms;
-}
 
 .footer-button:hover,
 .footer-button:focus {
-            background: var(--green);
+        background-color: var(--green);
 
 }

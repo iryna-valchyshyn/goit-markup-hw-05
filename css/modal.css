@@ -1,7 +1,7 @@
 .modal-overlay {
-   /* opacity: 0;
+ opacity: 0;
     visibility: hidden;
-    pointer-events: none;*/
+    pointer-events: none;
     transition: opacity 250ms ease, visibility 250ms ease;
 position: fixed;
     display: flex;
@@ -14,13 +14,13 @@ position: fixed;
     background-color: var(--navy-blue-modal);
     z-index: 99999999999;
 }
-/*
+
 .modal-overlay.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-*/
+
 .modal-content-overlay {
     display: flex;
         align-items: flex-start;
@@ -59,7 +59,7 @@ position: fixed;
     cursor: pointer;
     padding: 6px;
     line-height: 0;
-    transition-property: background-color;
+    transition-property: background-color, fill;
     transition-duration: 250ms;
 }
 
@@ -71,6 +71,7 @@ position: fixed;
 }
 
 .modal-title {
+    padding-bottom: 16px;
 font-family: var(--font-family);
 max-width: 360px;
 font-weight: 500;
@@ -88,9 +89,10 @@ font-weight: 500;
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
-        gap: 8px;
+        gap: 0;
         width: 360px;
             height: 448px;
+        padding-top: 0;
 }
 
 .text-fields {
@@ -98,15 +100,12 @@ font-weight: 500;
         align-items: flex-start;
         justify-content: flex-start;
         flex-direction: column;
-        gap: 4px;
+        gap: 0;
         width: 360px;
         max-height: 58px;
 }
 
-.input-svg-wrapper,
-.input-text {
-    position: relative;
-    display: flex;
+.input-svg-wrapper {
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
@@ -118,14 +117,24 @@ font-weight: 500;
         height: 40px;
         max-width: 360px;
         min-height: 40px;
-        letter-spacing: -0.02em;
+
         transition: border 250ms ease;
 }
 
+.input-text {
+width: 100%;
+height: 100%;
+border: none;
+outline: none;
+box-sizing: border-box;
+padding-left: 38px;
+padding-right: 38px;
+padding-bottom: 8px;
+padding-top: 8px;
+}
+
 .input-svg-wrapper:hover,
-.input-svg-wrapper:focus,
-.input-text:hover,
-.input-text:focus {
+.input-svg-wrapper:focus {
     border: 1px solid var(--iris);
 }
 
@@ -155,17 +164,19 @@ display: block;
 
 
 .form-icon {
-    fill: var(--navy-blue);
     position: absolute;
-    top: 50%;
+        z-index: 999;
+    fill: var(--navy-blue);
+    padding-left: 16px;
+    padding-bottom: 8px;
+    padding-top: 8px;
     transform: translateY(-50%);
     transition: fill 250ms ease;
+
 }
 
 .form-icon:hover,
-.form-icon:focus,
-.input-textarea:hover,
-.input-textarea:focus {
+.form-icon:focus {
     fill: var(--iris);
 }
 
@@ -174,6 +185,7 @@ display: block;
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: row;
+    resize: none;
     gap: 0px;
     border: 1px solid var(--navy-blue-modal);
     border-radius: 4px;
@@ -184,12 +196,16 @@ display: block;
     transition: border 250ms;
 }
 
+.input-textarea:hover,
+.input-textarea:focus {
+    border: 1px solid var(--iris);
+}
 
 .input-textarea::placeholder {
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 12px;
-letter-spacing: 0.04em;
+    letter-spacing: 0.04em;
     color: var(--navy-blue-modal);
 }
 
@@ -201,6 +217,27 @@ letter-spacing: 0.04em;
     gap: 8px;
     width: 360px;
     height: 16px;
+}
+
+.checkbox-icon {
+    display: none;
+}
+
+.native-checkbox:checked
++ .custom-checkbox .checkbox-icon {
+    display: block;
+        border-radius: 2px;
+            fill: var(--ocean);
+            border: 1px solid var(--ocean);
+}
+
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid var(--navy-blue-modal);
+    transform: translateY(-50%);
+        transition: fill border 250ms ease;
 }
 
 .native-checkbox {
@@ -241,18 +278,19 @@ letter-spacing: 0.04em;
     background-color: var(--iris);
     font-family: var(--font-family);
     font-weight: 500;
-        font-size: 16px;
-    
-        /* line-height: 24px; */
-        line-height: 1.5;
-        letter-spacing: 0.04em;
-        color: var(--white);
-                transition-property: background-color;
-                    transition-duration: 250ms;
+    font-size: 16px;
+
+    /* line-height: 24px; */
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    transition-property: background-color;
+    transition-duration: 250ms;
 }
 
 .submit-btn:hover,
 .submit-btn:focus {
+    cursor: pointer;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: var(--ocean);
 }
