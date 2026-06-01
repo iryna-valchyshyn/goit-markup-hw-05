@@ -426,7 +426,7 @@
         <div class="modal-content-overlay">
 
             <button class="button-close-modal" type="button" id="close-modal-button">
-                <svg width="8" height="8">
+                <svg class="close-icon" width="8" height="8">
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
@@ -469,8 +469,10 @@
 
                 <div class="text-fields">
                     <label for="form-comment" class="form-label">Comment</label>
-                    <textarea id="form-comment" name="comment" class="input-textarea"
-                        placeholder="Text input"></textarea>
+                    <div class="input-textarea-border">
+                        <textarea id="form-comment" name="comment" class="input-textarea"
+                            placeholder="Text input"></textarea>
+                    </div>
                 </div>
 
                 <div class="checkbox-wrapper">

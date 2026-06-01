@@ -97,7 +97,7 @@
     height: 40px;
     background: var(--iris);
     transition-property: background-color;
-        transition-duration: 250ms;
+    transition-duration: 250ms;
 }
 
 .illustration-footer {
@@ -107,8 +107,6 @@
 .icons-footer:hover,
 .icons-footer:focus {
     background: var(--green);
-    transition-property: background-color;
-        transition-duration: 250ms;
 }
 
 .subscribe {
@@ -169,8 +167,9 @@
         line-height: 2;
         letter-spacing: 0.04em;
         color: var(--white);
-            transition-property: border;
-                transition-duration: 250ms ease;
+        transition-property: border-color;
+        transition-duration: 250ms;
+        transition-timing-function: ease;
 
 }
 
